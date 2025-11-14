@@ -79,20 +79,3 @@ library_data = [
 
 
 print(analyze_library(library_data))
-
-def find_most_popular_book(library_data):
-    best_rate = -1
-    best_id = ""
-
-    for book in library_data:
-        rate = calculate_annualized_checkouts(book)
-        book_id = book[0]
-
-        if rate > best_rate:
-            best_rate = rate
-            best_id = book_id
-        elif rate == best_rate:
-            if book_id < best_id:
-                best_id = book_id
-
-    return best_id
