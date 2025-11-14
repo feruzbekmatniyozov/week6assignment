@@ -11,17 +11,19 @@ def find_most_popular_book(library_data):
     highest_id = ''
     highest_co = 0
 
+
     for book in library_data:
         current_co = calculate_annualized_checkouts(book)
         current_book = book[0]
 
-        if current_co >= highest_co:
+        if current_co > highest_co:
             highest_co = current_co
             highest_id = current_book
-        elif current_book == highest_co:
+        elif current_co == highest_co:
             if current_book < highest_id:
                 highest_id = current_book
     
+
     return highest_id
 
     
